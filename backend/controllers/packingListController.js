@@ -2,7 +2,8 @@ const { findProduct } = require("../models/productModel");
 
 function generatePackingList(ordersData) {
   const packingList = ordersData.map((order) => {
-    const { orderId, orderDate, shippingAddress, lineItems } = order;
+    const { orderId, orderDate, shippingAddress, lineItems, customerName } =
+      order;
 
     const formattedLineItems = lineItems.map((item) => {
       const { productName, quantity } = item;
@@ -14,6 +15,7 @@ function generatePackingList(ordersData) {
       orderId,
       orderDate,
       shippingAddress,
+      customerName,
       lineItems: formattedLineItems,
     };
   });

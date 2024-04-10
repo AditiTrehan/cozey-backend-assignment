@@ -46,17 +46,15 @@ const Home = () => {
 
   return (
     <>
-      <div className="mx-auto px-8 py-4 text-lg">
+      <p className="mx-auto px-8 py-4 text-2xl font-bold">
         Warehouse Management System
-      </div>
-      <div className="mx-auto px-4 py-4 flex flex-row">
-        <div className="px-4">
-          <h2>
-            <b>Orders</b>
-          </h2>
-          <ul>
+      </p>
+      <div className="mx-auto px-4 py-4 flex flex-row divide-x">
+        <div className="px-4 py-4 bg-red-200 rounded-md">
+          <p className="text-xl font-bold">Orders</p>
+          <ul className="divide-y-2 divide-dashed divide-black">
             {orders.map((order) => (
-              <li key={order.orderId}>
+              <li className="pt-2" key={order.orderId}>
                 <p>Order ID: {order.orderId}</p>
                 <p>Order Date: {order.orderDate}</p>
                 <p>Customer Name: {order.customerName}</p>
@@ -66,53 +64,51 @@ const Home = () => {
                   {order.lineItems.map((item) => (
                     <ul>
                       <li key={item}>Product Name: {item.productName}</li>
-                      <li key={item}>Product Price: ${item.price}</li>
                     </ul>
                   ))}
                 </p>
-                <p>Order Total: ${order.orderTotal}</p>
-                ========================================
-                {/* Display other order details */}
+                <p className="pb-2">Order Total: ${order.orderTotal}</p>
               </li>
             ))}
           </ul>
         </div>
-        <div class="px-4 grow">
-          <h2>
-            <b>Picking List</b>
-          </h2>
+        <div className="px-4 py-4 grow bg-orange-200 rounded-md">
+          <p className="text-xl font-bold">Picking List</p>
           <ul>
             {pickingList.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div class="px-4">
-          <h2>
-            <b>Packing List</b>
-          </h2>
-          <ul>
+        <div className="px-4 py-4 grow bg-lime-100 rounded-md">
+          <p className="text-xl font-bold">Packing List</p>
+          <p className="divide-y-2 divide-dashed divide-black">
             {packingList.map((order) => (
-              <li key={order.orderId}>
-                <p>Order ID: {order.orderId}</p>
-                <p>Order Date: {order.orderDate}</p>
-                <p>Shipping Address: {order.shippingAddress}</p>
-                <ul>
+              <div>
+                <p className="font-semibold pt-2">
+                  Order Date: {order.orderDate}
+                </p>
+                <>
+                  <p className="font-semibold">Line Items:</p>
                   {order.lineItems.map((item) => (
-                    <li key={item.productName}>
-                      {item.productName} - Quantity: {item.quantity}
+                    <>
+                      <p className="font-medium py-2">
+                        {item.productName} X {item.quantity}
+                      </p>
                       {item.subItems.map((subItem) => (
-                        <ul>
-                          <li key={subItem}>{subItem}</li>
-                        </ul>
+                        <p className="italic">{subItem}</p>
                       ))}
-                    </li>
-                  ))}
-                </ul>
-                ================
-              </li>
+                    </>
+                  ))}{" "}
+                </>
+                <p className="pb-2">
+                  <p className="font-semibold">Ships to:</p>
+                  <p>{order.customerName}</p>
+                  <p>{order.shippingAddress}</p>
+                </p>
+              </div>
             ))}
-          </ul>
+          </p>
         </div>
       </div>
     </>
