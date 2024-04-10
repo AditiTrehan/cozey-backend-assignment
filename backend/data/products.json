@@ -1,0 +1,22 @@
+[
+  {
+    "productName": "Valentines Box",
+    "productId": "000",
+    "items": [
+      "Red Roses Bouquet",
+      "Box of Chocolates",
+      "Love Card",
+      "Women's Perfume"
+    ]
+  },
+  {
+    "productName": "Birthday Box",
+    "productId": "111",
+    "items": ["Birthday Cupcake", "$100 Visa Gift Card", "Birthday Card"]
+  },
+  {
+    "productName": "Client Gift Box",
+    "productId": "222",
+    "items": ["Bottle of Wine", "Fruit Basket", "Pen"]
+  }
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "orderId": "0",
+    "orderTotal": "100",
+    "orderDate": "Feb 14, 2024",
+    "shippingAddress": "100 Dundas Street East",
+    "customerName": "Rob Smith",
+    "customerEmail": "robsmith@gmail.com",
+    "lineItems": [
+      {
+        "lineItemId": "123",
+        "productId": "000",
+        "productName": "Valentines Box",
+        "price": 100,
+        "quantity": 1
+      },
+      {
+        "lineItemId": "304",
+        "productId": "111",
+        "productName": "Birthday Box",
+        "price": 100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "orderId": "1",
+    "orderTotal": "200",
+    "orderDate": "Dec 17, 2023",
+    "shippingAddress": "12 Younge Street",
+    "customerName": "Steve Menon",
+    "customerEmail": "stevemenon@gmail.com",
+    "lineItems": [
+      {
+        "lineItemId": "334",
+        "productId": "111",
+        "productName": "Birthday Box",
+        "price": 100,
+        "quantity": 1
+      },
+      {
+        "lineItemId": "320",
+        "productId": "222",
+        "productName": "Client Gift Box",
+        "price": 100,
+        "quantity": 2
+      },
+      {
+        "lineItemId": "321",
+        "productId": "222",
+        "productName": "Client Gift Box",
+        "price": 100,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "orderId": "2",
+    "orderTotal": "500",
+    "orderDate": "Aug 5, 2023",
+    "shippingAddress": "500 Bloor Street",
+    "customerName": "Rose White",
+    "customerEmail": "rosewhite@gmail.com",
+    "lineItems": [
+      {
+        "lineItemId": "498",
+        "productId": "000",
+        "productName": "Valentines Box",
+        "price": 100,
+        "quantity": 1
+      },
+      {
+        "lineItemId": "320",
+        "productId": "222",
+        "productName": "Client Gift Box",
+        "price": 100,
+        "quantity": 1
+      },
+      {
+        "lineItemId": "749",
+        "productId": "111",
+        "productName": "Birthday Box",
+        "price": 300,
+        "quantity": 1
+      }
+    ]
+  }
+]
