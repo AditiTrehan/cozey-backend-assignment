@@ -74,11 +74,13 @@ const Home = () => {
         </div>
         <div className="px-4 py-4 grow bg-orange-200 rounded-md">
           <p className="text-xl font-bold">Picking List</p>
-          <ul>
-            {pickingList.map((item) => (
-              <li key={item}>{item}</li>
+          <div>
+            {pickingList.map((product) => (
+              <p>
+                <span>{product.item}</span> X <span>{product.quantity}</span>
+              </p>
             ))}
-          </ul>
+          </div>
         </div>
         <div className="px-4 py-4 grow bg-lime-100 rounded-md">
           <p className="text-xl font-bold">Packing List</p>
