@@ -53,63 +53,70 @@ const Home = () => {
         <div className="px-4 py-4 bg-red-200 rounded-md">
           <p className="text-xl font-bold">Orders</p>
           <ul className="divide-y-2 divide-dashed divide-black">
-            {orders.map((order) => (
-              <li className="pt-2" key={order.orderId}>
-                <p>Order ID: {order.orderId}</p>
-                <p>Order Date: {order.orderDate}</p>
-                <p>Customer Name: {order.customerName}</p>
-                <p>Customer Email: {order.customerEmail}</p>
-                <p>
-                  Order Items:{" "}
-                  {order.lineItems.map((item) => (
-                    <ul>
-                      <li key={item}>Product Name: {item.productName}</li>
-                    </ul>
-                  ))}
-                </p>
-                <p className="pb-2">Order Total: ${order.orderTotal}</p>
-              </li>
-            ))}
+            {orders
+              ? orders.map((order) => (
+                  <li className="pt-2" key={order.orderId}>
+                    <p>Order ID: {order.orderId}</p>
+                    <p>Order Date: {order.orderDate}</p>
+                    <p>Customer Name: {order.customerName}</p>
+                    <p>Customer Email: {order.customerEmail}</p>
+                    <p>
+                      Order Items:{" "}
+                      {order.lineItems.map((item) => (
+                        <ul>
+                          <li key={item}>Product Name: {item.productName}</li>
+                        </ul>
+                      ))}
+                    </p>
+                    <p className="pb-2">Order Total: ${order.orderTotal}</p>
+                  </li>
+                ))
+              : null}
           </ul>
         </div>
         <div className="px-4 py-4 grow bg-orange-200 rounded-md">
           <p className="text-xl font-bold">Picking List</p>
           <div>
-            {pickingList.map((product) => (
-              <p>
-                <span>{product.item}</span> X <span>{product.quantity}</span>
-              </p>
-            ))}
+            {pickingList
+              ? pickingList.map((product) => (
+                  <p>
+                    <span>{product.item}</span> X{" "}
+                    <span>{product.quantity}</span>
+                  </p>
+                ))
+              : null}
           </div>
         </div>
         <div className="px-4 py-4 grow bg-lime-100 rounded-md">
           <p className="text-xl font-bold">Packing List</p>
           <p className="divide-y-2 divide-dashed divide-black">
-            {packingList.map((order) => (
-              <div>
-                <p className="font-semibold pt-2">
-                  Order Date: {order.orderDate}
-                </p>
-                <>
-                  <p className="font-semibold">Line Items:</p>
-                  {order.lineItems.map((item) => (
+            {packingList
+              ? packingList.map((order) => (
+                  <div>
+                    <p className="font-semibold pt-2">
+                      Order Date: {order.orderDate}
+                    </p>
                     <>
-                      <p className="font-medium py-2">
-                        {item.productName} X {item.quantity}
-                      </p>
-                      {item.subItems.map((subItem) => (
-                        <p className="italic">{subItem}</p>
-                      ))}
+                      <p className="font-semibold">Line Items:</p>
+                      {order.lineItems.map((item) => (
+                        <>
+                          <p className="font-medium py-2">
+                            {item.productName} X {item.quantity}
+                          </p>
+                          {item.subItems.map((subItem) => (
+                            <p className="italic">{subItem}</p>
+                          ))}
+                        </>
+                      ))}{" "}
                     </>
-                  ))}{" "}
-                </>
-                <p className="pb-2">
-                  <p className="font-semibold">Ships to:</p>
-                  <p>{order.customerName}</p>
-                  <p>{order.shippingAddress}</p>
-                </p>
-              </div>
-            ))}
+                    <p className="pb-2">
+                      <p className="font-semibold">Ships to:</p>
+                      <p>{order.customerName}</p>
+                      <p>{order.shippingAddress}</p>
+                    </p>
+                  </div>
+                ))
+              : null}
           </p>
         </div>
       </div>
