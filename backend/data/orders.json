@@ -43,14 +43,7 @@
         "productId": "222",
         "productName": "Client Gift Box",
         "price": 100,
-        "quantity": 2
-      },
-      {
-        "lineItemId": "321",
-        "productId": "222",
-        "productName": "Client Gift Box",
-        "price": 100,
-        "quantity": 1
+        "quantity": 3
       }
     ]
   },
