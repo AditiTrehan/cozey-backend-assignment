@@ -6,9 +6,10 @@ const productsData = JSON.parse(
 
 function findProduct(productName, quantity) {
   const product = productsData.find(
-    (product) => product.productName === productName
+    (product) => product.productName === productName //Matching product names to map orders data and products data
   );
   if (product) {
+    //Returning product's items data with quantity
     return product.items.map((productItem) => `${productItem} x ${quantity}`);
   }
   return [];

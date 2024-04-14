@@ -7,7 +7,7 @@ function generatePackingList(ordersData) {
 
     const formattedLineItems = lineItems.map((item) => {
       const { productName, quantity } = item;
-      const subItems = findProduct(productName, quantity);
+      const subItems = findProduct(productName, quantity); //Mapping through line items to find product items
       return { productName, quantity, subItems };
     });
 

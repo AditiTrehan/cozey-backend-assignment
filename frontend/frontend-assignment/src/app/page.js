@@ -46,6 +46,7 @@ const Home = () => {
         Warehouse Management System
       </p>
       <div className="mx-auto px-4 py-4 flex flex-row divide-x">
+        {/* All Orders */}
         <div className="px-4 py-4 bg-red-200 rounded-md">
           <p className="text-xl font-bold">Orders</p>
           <ul className="divide-y-2 divide-dashed divide-black">
@@ -70,6 +71,7 @@ const Home = () => {
               : null}
           </ul>
         </div>
+        {/* Picking List */}
         <div className="px-4 py-4 grow bg-orange-200 rounded-md">
           <p className="text-xl font-bold">Picking List</p>
           <div>
@@ -83,6 +85,7 @@ const Home = () => {
               : null}
           </div>
         </div>
+        {/* Packing List */}
         <div className="px-4 py-4 grow bg-lime-100 rounded-md">
           <p className="text-xl font-bold">Packing List</p>
           <p className="divide-y-2 divide-dashed divide-black">
