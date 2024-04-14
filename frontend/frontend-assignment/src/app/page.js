@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const apiBaseUrl = process.env.API_BASE_URL;
+  const apiBaseUrl = "http://localhost:8080/api";
   const [orders, setOrders] = useState([]);
   const [pickingList, setPickingList] = useState([]);
   const [packingList, setPackingList] = useState([]);
@@ -16,7 +16,7 @@ const Home = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/orders`);
+      const response = await axios.get(`${apiBaseUrl}/orders`);
       setOrders(response.data);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -25,9 +25,7 @@ const Home = () => {
 
   const generatePickingList = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/api/picking-list`
-      );
+      const response = await axios.get(`${apiBaseUrl}/picking-list`);
       setPickingList(response.data);
     } catch (error) {
       console.error("Error generating picking list:", error);
@@ -35,9 +33,7 @@ const Home = () => {
   };
   const generatePackingList = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/api/packing-list`
-      );
+      const response = await axios.get(`${apiBaseUrl}/packing-list`);
       setPackingList(response.data);
     } catch (error) {
       console.error("Error generating packing list:", error);
@@ -62,8 +58,8 @@ const Home = () => {
                     <p>Customer Email: {order.customerEmail}</p>
                     <p>
                       Order Items:{" "}
-                      {order.lineItems.map((item) => (
-                        <ul>
+                      {order.lineItems.map((item, key) => (
+                        <ul key={key}>
                           <li key={item}>Product Name: {item.productName}</li>
                         </ul>
                       ))}
@@ -78,11 +74,11 @@ const Home = () => {
           <p className="text-xl font-bold">Picking List</p>
           <div>
             {pickingList
-              ? pickingList.map((product) => (
-                  <p>
+              ? pickingList.map((product, key) => (
+                  <div key={key}>
                     <span>{product.item}</span> X{" "}
                     <span>{product.quantity}</span>
-                  </p>
+                  </div>
                 ))
               : null}
           </div>
@@ -91,8 +87,11 @@ const Home = () => {
           <p className="text-xl font-bold">Packing List</p>
           <p className="divide-y-2 divide-dashed divide-black">
             {packingList
-              ? packingList.map((order) => (
-                  <div>
+              ? packingList.map((order, key) => (
+                  <div key={key}>
+                    <p className="font-semibold pt-2">
+                      Order ID: {order.orderId}
+                    </p>
                     <p className="font-semibold pt-2">
                       Order Date: {order.orderDate}
                     </p>
