@@ -16,7 +16,7 @@ Frontend: React.js
 Node.js & npm
 
 # Setting Up the Backend
-Navigate to the root directory of the project.
+Navigate to the backend directory of the project.
 Install required dependencies using: npm install
 Start the backend server: npm run dev
 Server will start on port http://localhost:8080
