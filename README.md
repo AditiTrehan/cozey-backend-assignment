@@ -33,3 +33,10 @@ Ensure the backend server is running (default port is 8000). When the React deve
 # Development Notes
 For local development, the React app communicates with the backend using a proxy to avoid CORS issues.
 In a production environment, we might have to deploy the frontend and backend separately.
+
+# Reference Video
+https://www.loom.com/share/b14b1b68ec6045eba86d3f0a06ff96e8?sid=517578ab-edee-43e5-b589-a104567a572d
+
+# Screenshot
+![image](https://github.com/AditiTrehan/cozey-backend-assignment/assets/38093532/729495f3-dee4-4015-a498-6358e5bce2af)
+
