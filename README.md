@@ -2,6 +2,8 @@
 An application designed to automate picking and packing tasks in the warehouse process.
 
 # Features
+Orders: Fetches a list of all orders recieved from customers.
+
 Picking List: A picking list for all items with their total quantities is generated based on all orders.
 
 Packing List: A packing list for all orders with the respective Products, items and total quantities for each is generated.
